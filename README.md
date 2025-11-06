@@ -1,6 +1,6 @@
 
 
-```markdown
+```
 # 🧠 Multimodal Search and RAG Systems
 
 This repository presents a **six-step journey** through building intelligent **multimodal AI systems** — from foundational representation learning to advanced multimodal **Retrieval-Augmented Generation (RAG)** and **recommender systems**.  
