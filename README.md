@@ -38,8 +38,9 @@ Step-5 → Real-world and industry-level applications
 Step-6 → Multi-vector multimodal recommender system
 ```
 
-Each step includes **Jupyter notebooks, datasets, and helper scripts** that can be executed independently.
+Each step includes **README.md, Jupyter notebooks, datasets, and helper scripts**.
 Together, they form a complete end-to-end workflow — from **embedding multimodal data** to **retrieving and generating insights** with RAG and recommendation.
+🧱 A separate source/ folder contains shared media assets — including images, audio, and video files — used throughout the project for training, retrieval, and evaluation examples.
 
 ---
 
