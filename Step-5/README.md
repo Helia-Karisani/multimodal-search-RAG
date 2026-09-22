@@ -1,9 +1,9 @@
 
 ---
 
-# 🏭 Step 5 – Industry Applications of Multimodal AI
+# Step 5 – Industry Applications of Multimodal AI
 
-### 🔗 Connection to Previous Steps
+### Connection to Previous Steps
 
 So far, we’ve built the full multimodal foundation:
 
@@ -16,15 +16,15 @@ Now, in **Step 5**, we take the system into the **real world** — showing how m
 
 ---
 
-### 🎯 Purpose
+### Purpose
 
 Demonstrate **practical industry use-cases** for multimodal AI: automatically parsing images that contain structured information, extracting text and data fields, and even generating executable logic from visual diagrams.
 
 ---
 
-### ⚙️ Workflow Overview
+### Workflow Overview
 
-#### 1️⃣ Setup – Environment and Model Initialization
+#### 1 Setup – Environment and Model Initialization
 
 The notebook loads the environment variables and API keys using `dotenv`, then configures Google’s Gemini API:
 
@@ -46,7 +46,7 @@ Two helper functions are defined:
 
 ---
 
-#### 2️⃣ Analyzing an Invoice (Image: `invoice.png`)
+#### 2 Analyzing an Invoice (Image: `invoice.png`)
 
 Purpose: Show how the LMM can extract **structured financial data** from a visual document.
 
@@ -69,7 +69,7 @@ The model performs a contextual calculation, demonstrating multimodal math reaso
 
 ---
 
-#### 3️⃣ Extracting Tables from Images (Image: `prosus_table.png`)
+#### 3 Extracting Tables from Images (Image: `prosus_table.png`)
 
 Purpose: Test structured data extraction and semantic analysis.
 
@@ -91,7 +91,7 @@ Gemini identifies numeric trends and responds with a textual summary, showing ho
 
 ---
 
-#### 4️⃣ Analyzing Flow Charts (Image: `swimlane-diagram-01.png`)
+#### 4 Analyzing Flow Charts (Image: `swimlane-diagram-01.png`)
 
 Purpose: Demonstrate visual logic understanding and code generation.
 
@@ -128,7 +128,7 @@ This shows how an LMM can translate diagrammatic logic into readable, functional
 
 ---
 
-### 🧩 Outcome and Connection to Next Steps
+### Outcome and Connection to Next Steps
 
 By the end of Step 5, we see multimodal AI applied to **real business scenarios** — from invoice data extraction and financial reasoning to table analysis and code generation from flow charts.
 This step proves that the LMM is not just a reasoning engine but a powerful automation tool that bridges human readable visual documents with machine actionable outputs.

@@ -1,8 +1,8 @@
 
 
-# 🔍 Step 4 – Multimodal Retrieval-Augmented Generation (RAG)
+# Step 4 – Multimodal Retrieval-Augmented Generation (RAG)
 
-### 🔗 Connection to Steps 1–3
+### Connection to Steps 1–3
 
 In **Step 1**, we built contrastive-learning embeddings that map multimodal inputs (like images and text) into shared vector spaces.
 In **Step 2**, we used those embeddings to perform multimodal retrieval — finding relevant content across data types.
@@ -13,16 +13,16 @@ Here, we first *retrieve* the most relevant image from a Weaviate vector databas
 
 ---
 
-### 🎯 Purpose
+### Purpose
 
 To build an **end-to-end Multimodal RAG system** that searches a pre-vectorized image + video dataset, retrieves contextually matching visual data, and uses an LMM to describe it in natural language.
 This demonstrates how retrieval engines and generative vision models can work together.
 
 ---
 
-### ⚙️ Workflow Overview
+### Workflow Overview
 
-#### 1️⃣ Setup – Connecting Weaviate and Loading API Keys
+#### 1 Setup – Connecting Weaviate and Loading API Keys
 
 The notebook starts by loading API keys from `.env` files using `dotenv`.
 It configures both `EMBEDDING_API_KEY` (for Weaviate vector retrieval) and `GOOGLE_API_KEY` (for Gemini).
@@ -43,7 +43,7 @@ This initializes a vector database capable of restoring and searching multimodal
 
 ---
 
-#### 2️⃣ Restoring Pre-Vectorized Resources
+#### 2 Restoring Pre-Vectorized Resources
 
 To speed up experiments, a **13 K+ image and video dataset** is restored from a backup named `resources-img-and-vid`:
 
@@ -66,7 +66,7 @@ This step ensures that all embeddings are ready for retrieval without re-vectori
 
 ---
 
-#### 3️⃣ Retrieving an Image from the Database
+#### 3 Retrieving an Image from the Database
 
 A custom function `retrieve_image(query)` is defined to search for visual matches to a text query within the `Resources` collection:
 
@@ -89,7 +89,7 @@ displays an image retrieved from the vector database based on semantic similarit
 
 ---
 
-#### 4️⃣ Describing the Retrieved Image with Gemini
+#### 4 Describing the Retrieved Image with Gemini
 
 Next, the Gemini API is configured for visual generation using `google-generativeai`:
 
@@ -109,7 +109,7 @@ The model analyzes the retrieved image and generates a rich natural-language sum
 
 ---
 
-#### 5️⃣ Combining Retrieval and Generation into a Single Pipeline
+#### 5 Combining Retrieval and Generation into a Single Pipeline
 
 A final function `mm_rag(query)` connects everything:
 
@@ -132,7 +132,7 @@ retrieves a mountain image and lets Gemini describe it automatically.
 
 ---
 
-#### 6️⃣ Testing and Experimentation
+#### 6 Testing and Experimentation
 
 Users are encouraged to try different queries (e.g., "diving under the sea" or "running in the rain").
 Each run retrieves a semantically relevant image and produces a unique LMM description — showing how RAG extends from text to vision domains.
@@ -144,7 +144,7 @@ client.close()
 
 ---
 
-### 🧩 Outcome and Connection to Next Steps
+### Outcome and Connection to Next Steps
 
 By the end of Step 4, we have a fully functional **Multimodal Retrieval-Augmented Generation system**.
 It retrieves images from a vector database based on textual queries and uses a Large Multimodal Model to interpret them in detail.
