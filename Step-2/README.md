@@ -1,7 +1,7 @@
 
-# 🔎 Step 2 – Building a Multimodal Search Engine
+# Step 2 – Building a Multimodal Search Engine
 
-### 🔗 Connection to Step 1
+### Connection to Step 1
 
 In **Step 1**, we learned how contrastive learning builds a *shared embedding space* where similar images lie close together.
 **Step 2** takes that principle further — using those embedding concepts to create a **real multimodal search system** capable of finding related items across **images, videos, and text**.
@@ -9,7 +9,7 @@ Instead of only comparing images to images, we now integrate multiple data types
 
 ---
 
-### 🎯 Purpose
+### Purpose
 
 This step demonstrates how to:
 
@@ -22,9 +22,9 @@ In short — this step turns the concept of “multimodal similarity” into a w
 
 ---
 
-### ⚙️ Workflow Overview
+### Workflow Overview
 
-#### 1️⃣ Setting Up the Environment
+#### 1 Setting Up the Environment
 
 After loading required libraries and API keys, Weaviate is connected in **embedded mode** (running locally in memory).
 The connection is configured with two key modules:
@@ -35,7 +35,7 @@ The connection is configured with two key modules:
 
 ---
 
-#### 2️⃣ Creating the Collection (“Animals”)
+#### 2 Creating the Collection (“Animals”)
 
 A new collection named **`Animals`** is created to store embeddings and metadata for media items.
 If an old copy exists, it is deleted and recreated fresh.
@@ -44,14 +44,14 @@ These embeddings will later allow similarity search across modalities.
 
 ---
 
-#### 3️⃣ Preparing Helper Functions
+#### 3 Preparing Helper Functions
 
 A small helper, `toBase64(path)`, reads a file (image or video) and encodes it in base64 format — the format Weaviate expects for uploading binary data.
 This makes it possible to send and store images or short videos directly from local files. 
 
 ---
 
-#### 4️⃣ Inserting Images into the Database
+#### 4 Inserting Images into the Database
 
 From the **`source/animal_image`** folder, the notebook loops through each file and uploads it to the Weaviate “Animals” collection.
 Each entry includes:
@@ -66,7 +66,7 @@ After completion, the script verifies there are no failed objects.
 
 ---
 
-#### 5️⃣ Inserting Videos
+#### 5 Inserting Videos
 
 Next, the same process is repeated for videos stored in the **`source/video`** folder.
 Each video is inserted one by one using `animals.data.insert()`, labeled with `mediaType = "video"`.
@@ -74,13 +74,13 @@ The notebook checks again for upload errors to confirm that the media assets (ab
 
 ---
 
-#### 6️⃣ Verifying the Database
+#### 6 Verifying the Database
 
 To confirm the content count and distribution, the code runs an **aggregation query** (`animals.aggregate.over_all(group_by="mediaType")`) which lists how many items of each type exist — verifying that images and videos are balanced and correctly stored. 
 
 ---
 
-#### 7️⃣ Building Multimodal Search Helpers
+#### 7 Building Multimodal Search Helpers
 
 Several functions make searching and displaying results easy:
 
@@ -91,7 +91,7 @@ Several functions make searching and displaying results easy:
 
 ---
 
-#### 8️⃣ Running Text-to-Media Search
+#### 8 Running Text-to-Media Search
 
 The first live query demonstrates **semantic retrieval using text input**.
 By searching for a phrase such as:
@@ -109,7 +109,7 @@ This shows that embeddings from different modalities can be meaningfully compare
 
 ---
 
-#### 9️⃣ Searching by Image
+#### 9 Searching by Image
 
 Using an image file (`test/test-cat.jpg`) as the query, the notebook calls `near_image()` to find related images and videos within the same embedding space.
 It returns a ranked list of similar results, rendered automatically by the helper functions.
@@ -117,14 +117,14 @@ A second version of this query retrieves an image from a **web URL**, converts i
 
 ---
 
-#### 🔟 Searching by Video
+#### 10 Searching by Video
 
 Finally, the code performs **video-to-media search** using `near_media()` with `media_type=NearMediaType.VIDEO`.
 Given a short clip (e.g., `test-meerkat.mp4`), Weaviate returns the most visually similar videos or related images, completing the “any-to-any” search capability. 
 
 ---
 
-#### 11️⃣ Visualizing the Multimodal Embedding Space
+#### 11 Visualizing the Multimodal Embedding Space
 
 To explore how the model clusters data internally, the notebook restores a saved backup (`resources-img-and-vid`) containing a larger collection of image and video embeddings.
 It then extracts vectors and their `mediaType` labels into a DataFrame and applies **UMAP** for 2D projection.
@@ -132,14 +132,14 @@ The resulting visualization shows two main clusters (images vs videos) with over
 
 ---
 
-#### 12️⃣ Interactive Exploration and Cleanup
+#### 12 Interactive Exploration and Cleanup
 
 An interactive UMAP plot allows zooming and highlighting across clusters.
 Finally, the connection to Weaviate is closed (`client.close()`), cleaning up the embedded database. 
 
 ---
 
-### 🧠 Outcome and Connection to Next Steps
+### Outcome and Connection to Next Steps
 
 At the end of Step 2, the project has evolved from learning image representations to **performing real multimodal retrieval** — connecting text, image, and video in one unified vector space.
 This serves as the backbone for Step 3, where the same concept expands into **Large Multimodal Models (LMMs)** that reason across modalities using language, not just similarity.

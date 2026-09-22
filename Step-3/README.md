@@ -1,8 +1,8 @@
 
 
-# 🧠 Step 3 – Large Multimodal Models (LMMs)
+# Step 3 – Large Multimodal Models (LMMs)
 
-### 🔗 Connection to Steps 1 & 2
+### Connection to Steps 1 & 2
 
 Up to this point, the project has built the foundation of multimodal intelligence:
 
@@ -15,7 +15,7 @@ Instead of matching vectors, the LMM actually *understands* what’s in the imag
 
 ---
 
-### 🎯 Purpose
+### Purpose
 
 This step demonstrates how to use an **LMM** to process images and answer questions about their content.
 You’ll explore how the model “sees” visual data, how it interprets charts and diagrams, and even how it detects hidden patterns within images.
@@ -23,9 +23,9 @@ It provides an intuitive look into **visual instruction tuning** — the process
 
 ---
 
-### ⚙️ Workflow Overview
+### Workflow Overview
 
-#### 1️⃣ Environment Setup
+#### 1 Environment Setup
 
 The notebook begins by loading API credentials through environment variables.
 The `google-generativeai` library is installed and configured with the user’s `GOOGLE_API_KEY`.
@@ -40,7 +40,7 @@ The library is then initialized using `genai.configure()` so that calls to `Gene
 
 ---
 
-#### 2️⃣ Helper Functions
+#### 2 Helper Functions
 
 A few utility functions are created to keep the interface readable:
 
@@ -55,7 +55,7 @@ This function wraps the full visual reasoning pipeline, transforming raw pixels 
 
 ---
 
-#### 3️⃣ Analyzing Images with the LMM
+#### 3 Analyzing Images with the LMM
 
 The first experiment tests whether the model can describe a **stock market chart** (`SP-500-Index-Historical-Chart.jpg`).
 Using:
@@ -69,7 +69,7 @@ This shows that LMMs can reason over **structured visual data**, not just natura
 
 ---
 
-#### 4️⃣ Interpreting Technical Figures
+#### 4 Interpreting Technical Figures
 
 Next, the model is tested on a conceptual image (`clip.png`) illustrating relationships between text and image embeddings.
 The prompt asks:
@@ -80,7 +80,7 @@ The LMM identifies it as a **CLIP architecture diagram** and explains its role i
 
 ---
 
-#### 5️⃣ Decoding Hidden Messages in Images
+#### 5 Decoding Hidden Messages in Images
 
 The notebook then challenges the model with a subtle task — interpreting an image (`blankimage3.png`) containing a *hidden text message* blended into background color.
 By prompting:
@@ -93,7 +93,7 @@ the LMM successfully decodes and reads the faint hidden text, illustrating how w
 
 ---
 
-#### 6️⃣ Understanding “How the Model Sees”
+#### 6 Understanding “How the Model Sees”
 
 To demystify what’s happening behind the scenes, the notebook loads the same hidden-text image using NumPy and Matplotlib.
 By thresholding color channels (`image_array[:,:,0]>120`), the code visualizes the red-channel intensity that the LMM might rely on.
@@ -102,7 +102,7 @@ It’s an educational visualization that contrasts *machine vision* with *human 
 
 ---
 
-#### 7️⃣ Creating Hidden Messages Yourself
+#### 7 Creating Hidden Messages Yourself
 
 Finally, a function `create_image_with_text()` lets users generate their own hidden-message images.
 It overlays colored text (e.g., “Hello, world!”) on a matching background and saves it as `extra_output_image.png`.
@@ -117,7 +117,7 @@ The image is then reprocessed with NumPy to visualize the binary mask — demons
 
 ---
 
-### 🧩 Outcome and Connection to Next Steps
+### Outcome and Connection to Next Steps
 
 By the end of Step 3, we’ve evolved from simply **embedding** and **retrieving** multimodal content to **reasoning** about it.
 The LMM can analyze complex visuals, interpret abstract diagrams, and extract hidden details — showing the jump from *searching* to *understanding*.
