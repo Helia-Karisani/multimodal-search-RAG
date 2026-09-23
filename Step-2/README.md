@@ -144,3 +144,5 @@ Finally, the connection to Weaviate is closed (`client.close()`), cleaning up th
 At the end of Step 2, the project has evolved from learning image representations to **performing real multimodal retrieval** — connecting text, image, and video in one unified vector space.
 This serves as the backbone for Step 3, where the same concept expands into **Large Multimodal Models (LMMs)** that reason across modalities using language, not just similarity.
 
+
+
