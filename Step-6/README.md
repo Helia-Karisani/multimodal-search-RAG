@@ -108,3 +108,5 @@ From learning embeddings (Step 1) to retrieval (Step 2), reasoning (Step 3), RAG
 This final step demonstrates how multimodal AI can understand, search, reason, and recommend — closing the loop on intelligent context-aware systems.
 
 ---
+
+
