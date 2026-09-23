@@ -95,3 +95,5 @@ Clusters corresponding to different digits emerge and separate, making the abstr
 By the end of Step 1, you have a working example of **representation learning**: the model converts raw images into meaningful numerical embeddings that capture semantic similarity.
 This principle is the backbone of later stages — where the same idea extends from single-modality (images) to **multimodal** settings, enabling **text–image–audio alignment**, **cross-modal retrieval**, and ultimately **RAG with multimodal context**.
 
+
+
