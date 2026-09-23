@@ -125,3 +125,5 @@ The LMM can analyze complex visuals, interpret abstract diagrams, and extract hi
 This directly sets the stage for **Step 4**, where these visual reasoning abilities are combined with **Retrieval-Augmented Generation (RAG)** — allowing an AI system to not only perceive multimodal inputs but also *generate contextually grounded answers* from retrieved evidence.
 
 
+
+
